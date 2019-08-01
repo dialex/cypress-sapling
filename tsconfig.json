@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "noEmit": true,
+    "baseUrl": "node_modules",
+    "types": ["cypress-commands", "@testing-library/cypress/typings", "cypress"]
+  },
+  "include": ["**/*.*"]
+}
