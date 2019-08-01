@@ -1,0 +1,13 @@
+{
+  "screenshotsFolder": "artifacts/screenshots",
+  "video": false,
+  "videosFolder": "artifacts/videos",
+  "videoUploadOnPasses": false,
+  "viewportHeight": 660,
+  "viewportWidth": 1300,
+  "watchForFileChanges": true,
+  "env": {
+    "env": "stg",
+    "isDebug": false
+  }
+}
