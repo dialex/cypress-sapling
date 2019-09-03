@@ -15,6 +15,10 @@ const addContext = require("mochawesome/addContext")
 Cypress.Server.defaults({
   //whitelist: (xhr) => true    // Mutes XHR requests
 })
+// These cookies will not be cleared before each test runs
+Cypress.Cookies.defaults({
+  whitelist: ["cookie-name"]
+})
 
 Cypress.on("test:after:run", (test, runnable) => {
   if (test.state === "failed") {
