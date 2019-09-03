@@ -7,7 +7,14 @@
 // ***********************************************************
 // This function is called when a project is opened or re-opened
 
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+const selectTestsWithGrep = require("cypress-select-tests/grep")
+const fs = require("fs-extra")
+const path = require("path")
+require("dotenv").config()
+
+// `on` is used to hook into various events Cypress emits
+// `config` is the resolved Cypress config
+module.exports = async (on, config) => {
+  on("file:preprocessor", selectTestsWithGrep(config))
+  return config
 }
