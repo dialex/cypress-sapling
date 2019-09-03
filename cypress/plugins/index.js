@@ -10,7 +10,6 @@
 const selectTestsWithGrep = require("cypress-select-tests/grep")
 const fs = require("fs-extra")
 const path = require("path")
-require("dotenv").config()
 
 // `on` is used to hook into various events Cypress emits
 // `config` is the resolved Cypress config
