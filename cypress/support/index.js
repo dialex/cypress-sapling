@@ -32,3 +32,9 @@ Cypress.on("test:after:run", (test, runnable) => {
     addContext({ test }, `assets/${Cypress.spec.name}/${screenshotFileName}`)
   }
 })
+
+// In case you want to set cookies for all tests (e.g. login)
+before(function setupCookiesForAllTests() {
+  // cy.setCookie("cookie-name", "cookie-value")
+  // cy.getCookie("cookie-name").should("have.property", "value", "cookie-value")
+})
