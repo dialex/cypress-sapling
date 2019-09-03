@@ -38,3 +38,26 @@ before(function setupCookiesForAllTests() {
   // cy.setCookie("cookie-name", "cookie-value")
   // cy.getCookie("cookie-name").should("have.property", "value", "cookie-value")
 })
+
+// Enable "Fail Fast" (https://github.com/cypress-io/cypress/issues/518#issuecomment-508731869)
+switch (Cypress.env("abortStrategy")) {
+  case "run":
+    before(function abortRunIfFailedFast() {
+      cy.getCookie("failfast_occurred").then(cookie => {
+        if (cookie && cookie.value === "true") {
+          Cypress.runner.stop()
+        }
+      })
+    })
+  /* fallthrough */
+  case "spec":
+    afterEach(function updateFailFastCookie() {
+      if (this.currentTest.state === "failed" && this.currentTest.title.includes("#fail-fast")) {
+        cy.setCookie("failfast_occurred", "true")
+        Cypress.runner.stop()
+      }
+    })
+    break
+  default:
+    break
+}
