@@ -3,7 +3,7 @@
     "allowJs": true,
     "noEmit": true,
     "baseUrl": "node_modules",
-    "types": ["cypress-commands", "@testing-library/cypress/typings", "cypress"]
+    "types": ["cypress", "cypress-commands", "@types/testing-library__cypress"]
   },
   "include": ["**/*.*"]
 }
