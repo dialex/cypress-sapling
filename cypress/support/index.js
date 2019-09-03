@@ -15,9 +15,15 @@ const addContext = require("mochawesome/addContext")
 Cypress.Server.defaults({
   //whitelist: (xhr) => true    // Mutes XHR requests
 })
+
 // These cookies will not be cleared before each test runs
 Cypress.Cookies.defaults({
   whitelist: ["cookie-name"]
+})
+
+// In case you want to disable all screenshots (useful for API testing)
+Cypress.Screenshot.defaults({
+  screenshotOnRunFailure: true
 })
 
 Cypress.on("test:after:run", (test, runnable) => {
