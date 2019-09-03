@@ -1,5 +1,5 @@
 module.exports = {
-  list: ["chore", "fix", "refactor", "feat", "test", "doc", "format", "ci"],
+  list: ["chore", "fix", "refactor", "feat", "test", "doc", "format", "ci", "hack"],
   maxMessageLength: 64,
   minMessageLength: 3,
   commitMessageFormat: "<type>: <emoji>  <subject>",
@@ -59,6 +59,11 @@ module.exports = {
       description: "Add or update a test",
       emoji: "🔍",
       value: "test"
+    },
+    hack: {
+      description: "This is a tmp hack and I'm ashamed to do this",
+      emoji: "💩",
+      value: "hack"
     }
   }
 }
