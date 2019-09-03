@@ -6,6 +6,14 @@
   "viewportHeight": 660,
   "viewportWidth": 1300,
   "watchForFileChanges": true,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "artifacts/mochawesome-sources",
+    "quiet": true,
+    "overwrite": false,
+    "html": false,
+    "json": true
+  },
   "env": {
     "env": "stg",
     "isDebug": false

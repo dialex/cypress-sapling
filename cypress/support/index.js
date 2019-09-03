@@ -9,8 +9,16 @@
 import "./commands"
 
 require("cypress-commands")
+const addContext = require("mochawesome/addContext")
 
 // Pass anything here you'd normally pass to cy.server()
 Cypress.Server.defaults({
   //whitelist: (xhr) => true    // Mutes XHR requests
+})
+
+Cypress.on("test:after:run", (test, runnable) => {
+  if (test.state === "failed") {
+    const screenshotFileName = `${runnable.parent.title} -- ${test.title} (failed).png`
+    addContext({ test }, `assets/${Cypress.spec.name}/${screenshotFileName}`)
+  }
 })

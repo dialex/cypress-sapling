@@ -6,7 +6,7 @@
   "scripts": {
     "c": "yarn commit",
     "clean:install": "rm -r node_modules",
-    "clean:run": "rm -r artifacts",
+    "clean:report": "rm -rf artifacts/mochawesome-*",
     "commit": "npx git-cz",
     "cypress:debug": "cypress open",
     "cypress": "cypress run",
@@ -16,8 +16,10 @@
     "format": "prettier --check '**/*.{js,json}'",
     "lint:fix": "eslint --fix '**/*.js'",
     "lint": "eslint '**/*.js'",
+    "report": "cp -R artifacts/screenshots/ artifacts/mochawesome-report/assets/; npx mochawesome-merge --reportDir artifacts/mochawesome-sources > mochawesome.json; npx marge mochawesome.json -o ./artifacts/mochawesome-report; rm mochawesome.json;",
+    "report:open": "open artifacts/mochawesome-report/mochawesome.html",
     "setup-secrets": "cp -i cypress/fixtures/config/cypress.secrets.template.json cypress.env.json && open -t cypress.env.json",
-    "test": "yarn run cypress"
+    "test": "yarn run clean:report && yarn run cypress; yarn run report; yarn report:open"
   },
   "husky": {
     "hooks": {
@@ -48,6 +50,10 @@
     "git-cz": "^3.2.1",
     "husky": "^3.0.4",
     "lint-staged": "^9.2.5",
+    "mocha": "5.2.0",
+    "mochawesome": "^4.1.0",
+    "mochawesome-merge": "^2.0.1",
+    "mochawesome-report-generator": "^4.0.1",
     "prettier": "^1.18.2"
   },
   "dependencies": {},
