@@ -10,3 +10,6 @@ package-lock.json
 # Generated
 artifacts
 *.log
+
+# secrets
+cypress.env.json
