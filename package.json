@@ -16,8 +16,8 @@
     "format": "prettier --check '**/*.{js,json}'",
     "lint:fix": "eslint --fix '**/*.js'",
     "lint": "eslint '**/*.js'",
-    "report": "cp -R artifacts/screenshots/ artifacts/mochawesome-report/assets/; npx mochawesome-merge --reportDir artifacts/mochawesome-sources > mochawesome.json; npx marge mochawesome.json -o ./artifacts/mochawesome-report; rm mochawesome.json;",
     "report:open": "open artifacts/mochawesome-report/mochawesome.html",
+    "report": "cp -R artifacts/screenshots/ artifacts/mochawesome-report/assets/; npx mochawesome-merge --reportDir artifacts/mochawesome-sources > mochawesome.json; npx marge mochawesome.json -o ./artifacts/mochawesome-report; rm mochawesome.json;",
     "setup-secrets": "cp -i cypress/fixtures/config/cypress.secrets.template.json cypress.env.json && open -t cypress.env.json",
     "test": "yarn run clean:report && yarn run cypress; yarn run report; yarn report:open"
   },
