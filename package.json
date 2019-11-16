@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "c": "yarn commit",
-    "clean:install": "rm -r node_modules",
+    "clean:install": "rm -rf node_modules",
     "clean:report": "rm -rf artifacts/mochawesome-*",
     "commit": "npx git-cz",
     "cypress:debug": "cypress open",
