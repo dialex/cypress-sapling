@@ -33,10 +33,22 @@ Cypress.on("test:after:run", (test, runnable) => {
   }
 })
 
-// In case you want to set cookies for all tests (e.g. login)
+// If you want to display additional info when a test fails, use below
+Cypress.on("fail", error => {
+  const cookies = ["cookie-name", "another-cookie"]
+  let cookiesMsg = "Cookies:"
+  for (const cookie of cookies) {
+    cookiesMsg += ` ${cookie}="${getCookieValue(cookie)}"`
+  }
+
+  error.message = `${error.message}\n\t${cookiesMsg}`
+  throw error // still fail the test
+})
+
+// If you want to set cookies for all tests (e.g. login), uncomment below
 before(function setupCookiesForAllTests() {
-  // cy.setCookie("cookie-name", "cookie-value")
-  // cy.getCookie("cookie-name").should("have.property", "value", "cookie-value")
+  cy.setCookie("cookie-name", "cookie-value")
+  cy.getCookie("cookie-name").should("have.property", "value", "cookie-value")
 })
 
 // Enable "Fail Fast" (https://github.com/cypress-io/cypress/issues/518#issuecomment-508731869)
@@ -60,4 +72,16 @@ switch (Cypress.env("abortStrategy")) {
     break
   default:
     break
+}
+
+// Utils
+
+function getCookieValue(name) {
+  const value = "; " + document.cookie
+  const parts = value.split("; " + name + "=")
+  if (parts.length === 2)
+    return parts
+      .pop()
+      .split(";")
+      .shift()
 }
