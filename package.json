@@ -11,7 +11,8 @@
     "cypress:debug": "cypress open",
     "cypress": "cypress run",
     "deps:install": "yarn install --frozen-lockfile",
-    "deps:upgrade": "yarn clean:install && yarn install",
+    "deps:upgrade": "yarn clean:install && yarn upgrade && yarn deps:sync && yarn install",
+    "deps:sync": "npx syncyarnlock --keepPrefix --save",
     "format:fix": "prettier --write '**/*.{js,json}'",
     "format": "prettier --check '**/*.{js,json}'",
     "lint:fix": "eslint --fix '**/*.js'",
@@ -58,6 +59,8 @@
     "mochawesome-report-generator": "^4.0.1",
     "prettier": "^1.18.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "syncyarnlock": "^1.0.19"
+  },
   "private": true
 }
