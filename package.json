@@ -22,7 +22,9 @@
     "report:generate": "npx marge mochawesome.json -o ./artifacts/mochawesome-report && rm mochawesome.json",
     "report:open": "open artifacts/mochawesome-report/mochawesome.html",
     "report": "yarn report:get-assets && yarn report:get-results && yarn report:generate",
-    "setup-secrets": "cp -i cypress/fixtures/config/cypress.secrets.template.json cypress.env.json && open -t cypress.env.json",
+    "secrets": "yarn secrets:setup && yarn secrets:edit",
+    "secrets:setup": "cp -i cypress/fixtures/config/cypress.secrets.template.json ./cypress.env.json",
+    "secrets:edit": "open -t cypress.env.json &> /dev/null || xdg-open ./cypress.env.json &> /dev/null || echo 'Failed to open the file ./cypress.env.json for editing'; exit 1",
     "test": "yarn run clean:report && yarn run cypress; yarn run report; yarn report:open"
   },
   "husky": {
