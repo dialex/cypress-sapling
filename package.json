@@ -49,7 +49,7 @@
   "license": "MIT",
   "devDependencies": {
     "@testing-library/cypress": "^4.2.0",
-    "cypress": "^3.8.3",
+    "cypress": "^4.0.1",
     "cypress-commands": "^0.2.0",
     "cypress-dark": "^1.7.14",
     "cypress-select-tests": "^1.5.2",
