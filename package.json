@@ -6,8 +6,8 @@
   "scripts": {
     "c": "yarn commit",
     "commit": "npx git-cz",
-    "cypress:debug": "cypress open",
-    "cypress": "cypress run --reporter-options configFile=reporter.config.json",
+    "cypress:debug": "yarn report:clean && cypress open",
+    "cypress": "yarn report:clean && cypress run --reporter-options configFile=reporter.config.json",
     "deps:clean": "rm -rf node_modules",
     "deps:install": "yarn install --frozen-lockfile",
     "deps:upgrade": "yarn deps:clean && yarn upgrade && yarn deps:sync && yarn install",
@@ -25,7 +25,7 @@
     "secrets": "yarn secrets:setup && yarn secrets:edit",
     "secrets:setup": "cp -i cypress/fixtures/config/cypress.secrets.template.json ./cypress.env.json",
     "secrets:edit": "open -t cypress.env.json &> /dev/null || xdg-open ./cypress.env.json &> /dev/null || echo 'Failed to open the file ./cypress.env.json for editing'; exit 1",
-    "test": "yarn run clean:report && yarn run cypress; yarn run report; yarn report:open"
+    "test": "yarn run cypress; yarn run report; yarn report:open"
   },
   "husky": {
     "hooks": {
