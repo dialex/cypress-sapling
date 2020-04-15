@@ -7,7 +7,7 @@
     "c": "yarn commit",
     "commit": "npx git-cz",
     "cypress:debug": "cypress open",
-    "cypress": "cypress run",
+    "cypress": "cypress run --reporter-options configFile=reporter.config.json",
     "deps:clean": "rm -rf node_modules",
     "deps:install": "yarn install --frozen-lockfile",
     "deps:upgrade": "yarn deps:clean && yarn upgrade && yarn deps:sync && yarn install",

@@ -1,0 +1,10 @@
+{
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "artifacts/mochawesome-sources",
+    "quiet": true,
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
+}
