@@ -4,6 +4,9 @@
   "description": "A skeleton for every Cypress repository",
   "main": "",
   "scripts": {
+    "bump:major": "npm version --no-commit-hooks --no-git-tag-version major",
+    "bump:minor": "npm version --no-commit-hooks --no-git-tag-version minor",
+    "bump": "./scripts/version-bump.sh",
     "c": "yarn commit",
     "commit": "npx git-cz",
     "cypress:debug": "yarn report:clean && cypress open",
