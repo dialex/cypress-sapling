@@ -9,6 +9,7 @@
 import "./commands"
 
 require("cypress-commands")
+require("cypress-plugin-retries")
 const addContext = require("mochawesome/addContext")
 
 // Pass anything here you'd normally pass to cy.server()
