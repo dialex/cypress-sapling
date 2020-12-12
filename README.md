@@ -13,7 +13,6 @@ _No need to start with the seed -- plant the sapling!_
 - JUnit test results (for CI integration), via [mocha-junit-reporter](https://github.com/michaelleeallen/mocha-junit-reporter)
 - Intuitive test commands, via [Testing Library](https://github.com/testing-library/cypress-testing-library)
 - Filter tests to run based on tags, via [cypress-select-tests](https://github.com/bahmutov/cypress-select-tests)
-- Auto retry failed tests, via [cypress-plugin-retries](https://github.com/Bkucera/cypress-plugin-retries)
 - Wait the test execution until a condition is true, via [cypress-wait-until](https://github.com/NoriSte/cypress-wait-until)
 - Docker commands to build an image ready to run tests anywhere
 

@@ -2114,13 +2114,6 @@ cypress-multi-reporters@^1.4.0:
     debug "^4.1.1"
     lodash "^4.17.15"
 
-cypress-plugin-retries@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/cypress-plugin-retries/-/cypress-plugin-retries-1.5.2.tgz#21d5247cd77013b95bbfdd914f2de66f91f76a2e"
-  integrity sha512-o1xVIGtv4WvNVxoVJ2X08eAuvditPHrePRzHqhwwHbMKu3C2rtxCdanRCZdO5fjh8ww+q4v4V0e9GmysbOvu3A==
-  dependencies:
-    chalk "^3.0.0"
-
 cypress-select-tests@^1.5.9:
   version "1.5.9"
   resolved "https://registry.yarnpkg.com/cypress-select-tests/-/cypress-select-tests-1.5.9.tgz#47fec88e03dfa67d8c803782eabac5186707217a"

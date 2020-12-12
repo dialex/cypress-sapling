@@ -15,7 +15,6 @@ const path = require("path")
 // `config` is the resolved Cypress config
 module.exports = async (on, config) => {
   on("file:preprocessor", selectTestsWithGrep(config))
-  require("cypress-plugin-retries/lib/plugin")(on)
 
   return config
 }

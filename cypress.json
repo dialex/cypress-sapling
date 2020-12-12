@@ -9,7 +9,6 @@
   "env": {
     "abortStrategy": "run",
     "env": "stg",
-    "isDebug": false,
-    "RETRIES": 1
+    "isDebug": false
   }
 }
