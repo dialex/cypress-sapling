@@ -8,62 +8,62 @@ module.exports = {
     chore: {
       description: "Small and boring change required for something else",
       emoji: "🤖",
-      value: "chore"
+      value: "chore",
     },
     ci: {
       description: "Change CI or build process",
       emoji: "🛠",
-      value: "ci"
+      value: "ci",
     },
     doc: {
       description: "Change documentation",
       emoji: "📘",
-      value: "doc"
+      value: "doc",
     },
     docker: {
       description: "Change Docker stuff",
       emoji: "🐳",
-      value: "docker"
+      value: "docker",
     },
     feat: {
       description: "Introduce a new feature",
       emoji: "⭐️",
-      value: "feat"
+      value: "feat",
     },
     fix: {
       description: "Fix a bug",
       emoji: "🐞",
-      value: "fix"
+      value: "fix",
     },
     perf: {
       description: "Improve performance",
       emoji: "⚡️",
-      value: "perf"
+      value: "perf",
     },
     refactor: {
       description: "Improve existing code",
       emoji: "♻️",
-      value: "refactor"
+      value: "refactor",
     },
     release: {
       description: "Create a release commit",
       emoji: "🚚",
-      value: "release"
+      value: "release",
     },
     format: {
       description: "Improve code lint or style",
       emoji: "🎨",
-      value: "format"
+      value: "format",
     },
     test: {
       description: "Add or update a test",
       emoji: "🔍",
-      value: "test"
+      value: "test",
     },
     hack: {
       description: "This is a tmp hack and I'm ashamed to do this",
       emoji: "💩",
-      value: "hack"
-    }
-  }
+      value: "hack",
+    },
+  },
 }

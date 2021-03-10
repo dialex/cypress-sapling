@@ -18,12 +18,12 @@ Cypress.Server.defaults({
 
 // These cookies will not be cleared before each test runs
 Cypress.Cookies.defaults({
-  preserve: ["cookie-name"]
+  preserve: ["cookie-name"],
 })
 
 // In case you want to disable all screenshots (useful for API testing)
 Cypress.Screenshot.defaults({
-  screenshotOnRunFailure: true
+  screenshotOnRunFailure: true,
 })
 
 Cypress.on("test:after:run", (test, runnable) => {
@@ -34,7 +34,7 @@ Cypress.on("test:after:run", (test, runnable) => {
 })
 
 // If you want to display additional info when a test fails, use below
-Cypress.on("fail", error => {
+Cypress.on("fail", (error) => {
   const cookies = ["cookie-name", "another-cookie"]
   let cookiesMsg = "Cookies:"
   for (const cookie of cookies) {
@@ -55,7 +55,7 @@ before(function setupCookiesForAllTests() {
 switch (Cypress.env("abortStrategy")) {
   case "run":
     before(function abortRunIfFailedFast() {
-      cy.getCookie("failfast_occurred").then(cookie => {
+      cy.getCookie("failfast_occurred").then((cookie) => {
         if (cookie && cookie.value === "true") {
           Cypress.runner.stop()
         }
@@ -79,9 +79,5 @@ switch (Cypress.env("abortStrategy")) {
 function getCookieValue(name) {
   const value = "; " + document.cookie
   const parts = value.split("; " + name + "=")
-  if (parts.length === 2)
-    return parts
-      .pop()
-      .split(";")
-      .shift()
+  if (parts.length === 2) return parts.pop().split(";").shift()
 }
